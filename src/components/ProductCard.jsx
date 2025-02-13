@@ -1,9 +1,12 @@
+
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap CSS is imported
 import { addToCart } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2"
+
 
 
 function ProductCard({ product }) {
@@ -12,8 +15,16 @@ function ProductCard({ product }) {
     
     e.preventDefault()
     dispatch(addToCart(product))
-    alert("Product Added Successfully")
+    showAlert()
   }
+  function showAlert(){
+    Swal.fire({
+      title: "Product Added Sucessfully",
+      text: "You clicked the button!",
+      icon: "success"
+    });
+  }
+ 
   return (
     <Link to={`/product/${product.id}`} className="text-decoration-none">
     <div className="card text-center p-3 shadow-sm h-100">
@@ -32,7 +43,7 @@ function ProductCard({ product }) {
         <FaStar className="text-warning" />
       </div>
       <div className="d-flex align-items-center justify-content-center">
-        <button className="btn btn-danger text-center me-2" onClick={(e) => handleAddToCart(e,product)}>Add To Cart</button>
+        <button className="btn btn-danger text-center me-2" onClick={(e) => handleAddToCart(e,product)} >Add To Cart</button>
         </div>
         
     </div>

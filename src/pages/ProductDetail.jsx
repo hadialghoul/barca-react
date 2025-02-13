@@ -1,9 +1,12 @@
+
 import React, { useEffect, useState } from "react";
-import { FaCarSide, FaQuestion } from "react-icons/fa";
+
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2"
+
 
 function ProductDetail() {
     const { id } = useParams();
@@ -22,8 +25,15 @@ function handleAddToCart(e){
 
     e.preventDefault()
     dispatch(addToCart(product))
-    alert("Product Added Successfully")
+    showAlert()
   }
+  function showAlert(){
+      Swal.fire({
+        title: "Product Added Sucessfully",
+        text: "You clicked the button!",
+        icon: "success"
+      });
+    }
 
     if (!product) {
         return <div className="text-center mt-5">Product not found</div>;
@@ -40,16 +50,9 @@ function handleAddToCart(e){
                     <p className="text-danger fs-4">$ {product.price}</p>
                     <div className="d-flex align-items-center gap-2">
                         <input id="quantity" type="number" min="1" className="form-control w-25" />
-                        <button className="btn btn-primary" onClick={(e) => handleAddToCart(e,product.id)}>Add To Cart</button>
+                        <button className="btn btn-danger" onClick={(e) => handleAddToCart(e,product.id)}>Add To Cart</button>
                     </div>
-                    <div className="mt-4">
-                        <p className="d-flex align-items-center gap-2">
-                            <FaCarSide className="text-success" /> Delivery and Return
-                        </p>
-                        <p className="d-flex align-items-center gap-2">
-                            <FaQuestion className="text-warning" /> Ask a Question
-                        </p>
-                    </div>
+                   
                 </div>
             </div>
         </div>

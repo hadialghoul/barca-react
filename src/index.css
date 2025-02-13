@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+  .carousel-caption {
+    bottom: 0;
+    max-height: 100%;
+    overflow: visible;
+    white-space: normal;
+}
+.carousel-caption .container {
+    max-width: 100%;
+}
+.carousel-caption h1, .carousel-caption p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

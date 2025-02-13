@@ -9,6 +9,7 @@ import {useSelector,useDispatch} from "react-redux"
 import mockData from "../assests/mockData"
 import ProductCard from "../components/ProductCard";
 import About from "../components/About";
+import { Link } from "react-router-dom";
 
 
 
@@ -24,8 +25,9 @@ function Home (){
     },[])
 return(
     <>
+   
        
-       <div className="container-fluid header-carousel px-0 mb-5">
+       <div className="container-fluid header-carousel px-0 py-1 mb-5">
     <div id="header-carousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
         <div className="carousel-inner">
             {display ?
@@ -37,7 +39,7 @@ return(
                    <div className="col-lg-7 text-start">
                        <h1 className="display-1 text-white animated slideInRight mb-3">Your One-Stop Shop for Quality Products</h1>
                        <p className="mb-5 animated slideInRight">Braca Store offers a diverse range of high-quality products, from trendy apparel to unique collectibles, all carefully curated to meet your needs and tastes.</p>
-                       <a href="#" className="btn btn-danger py-3 px-5 animated slideInRight">Explore More</a>
+                       <Link to="/about" className="btn btn-danger py-3 px-5 animated slideInRight">Explore More</Link>
                    </div>
                </div>
            </div>
@@ -52,7 +54,7 @@ return(
                    <div className="col-lg-7 text-end">
                        <h1 className="display-1 text-white animated slideInLeft mb-3">Braca Store – Shop with Confidence</h1>
                        <p className="mb-5 animated slideInLeft">At Braca Store, we prioritize customer satisfaction with fast, secure delivery and a smooth shopping experience, ensuring you get the best products at great prices.</p>
-                       <a href="#" className="btn btn-danger py-3 px-5 animated slideInLeft">Explore More</a>
+                       <Link to='/about' className="btn btn-danger py-3 px-5 animated slideInLeft">Explore More</Link>
                    </div>
                </div>
            </div>
@@ -65,7 +67,7 @@ return(
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
         </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next" onClick={handleClick}>
+        <button className="carousel-control-next " type="button" data-bs-target="#header-carousel" data-bs-slide="next" onClick={handleClick}>
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
         </button>

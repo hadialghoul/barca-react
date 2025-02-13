@@ -1,8 +1,11 @@
+
 import React from "react";
 import { useParams } from "react-router-dom";
 import mockData from "../assests/mockData";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import Swal from "sweetalert2"
+
 
 
 function CategoryPage() {
@@ -11,11 +14,17 @@ function CategoryPage() {
   
   const dispatch=useDispatch()
   function handleAddToCart(product){
-  
-     
       dispatch(addToCart(product))
-      alert("Product Added Successfully")
+      showAlert()
+     
     }
+    function showAlert(){
+        Swal.fire({
+          title: "Product Added Sucessfully",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+      }
 
   return (
     <div className="container mt-5">
