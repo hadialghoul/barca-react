@@ -12,6 +12,8 @@ import FilterData from "./pages/FilterData";
 import ProductDetail from "./pages/ProductDetail";
 import CategoryPage from "./pages/CategoryPage";
 import Contact from "./pages/Contact";
+import Aboutt from "./pages/Aboutt";
+
 
 function App() {
   const [order, setOrder] = useState(null);
@@ -45,6 +47,7 @@ function MainApp({ isLoggedIn, setIsLoggedIn, order, setOrder }) {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<Aboutt />} />
       </Routes>
       {/* Only render Footer if it's not the login or register page */}
       {!isLoginPage && <Footer />}

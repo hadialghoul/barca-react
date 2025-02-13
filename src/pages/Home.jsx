@@ -30,7 +30,7 @@ return(
         <div className="carousel-inner">
             {display ?
        <div className="carousel-item active">
-       <img className="w-100" src={carosal1} alt="Image" height="1000px" />
+       <img className="w-100 img-fluid" src={carosal1} alt="Image" height="1000px" />
        <div className="carousel-caption">
            <div className="container">
                <div className="row justify-content-start">
@@ -45,7 +45,7 @@ return(
    </div>
    :
    <div className="carousel-item active">
-       <img className="w-100" src={carosal2} alt="Image" height="1000px" />
+       <img className="w-100 img-fluid" src={carosal2} alt="Image" height="1000px" />
        <div className="carousel-caption">
            <div className="container">
                <div className="row justify-content-end">
